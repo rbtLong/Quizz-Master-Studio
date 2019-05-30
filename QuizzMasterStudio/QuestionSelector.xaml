@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="QuizzMasterStudio.QuestionSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="200" MinWidth="200">
+    <Expander FontSize="20" FontFamily="Calibri" FontWeight="Bold" ExpandDirection="Down"
+              IsExpanded="True" FontStretch="ExtraExpanded" Name="expContainer">
+        <Expander.Header>
+            <TextBlock Text="Questions" HorizontalAlignment="Center" VerticalAlignment="Stretch"
+                       RenderTransformOrigin="0,3" Height="25">
+            </TextBlock>
+        </Expander.Header>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <ListBox Name="lbxQuestionSelect" VerticalAlignment="Stretch" MinWidth="150"
+                     FontSize="14" FontFamily="Calibri" Grid.Row="1" SelectionChanged="lbxQuizzSelect_SelectionChanged">
+                <ListBox.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Offset="0" Color="#dcdcdc" />
+                        <GradientStop Offset="1" Color="#ffffff" />
+                    </LinearGradientBrush>
+                </ListBox.Background>
+            </ListBox>
+            
+            <DockPanel Grid.Row="0">
+                <Menu>
+                    <MenuItem Header="Add" Name="miNewQuizz">
+                        <MenuItem Header="Free Response Question" Name="miAddFreeResponseQuestion" />
+                        <MenuItem Header="Fill-In Question" Name="miAddFillInQuestion" />
+                        <MenuItem Header="Multiple Choice Question" Name="miAddMultileChoiceQuestion" />
+                        <MenuItem Header="True/False Question" Name="miAddTrueFalseQuestion" />
+                        <MenuItem Header="Flash Card Question" Name="miFlashCardQuestion" />
+                        <MenuItem Header="Math Free Response Question" Name="miAddMathNewFreeResponseQuestion" />
+                        <MenuItem Header="Math Arithemtic Question" Name="miArithemticQuestion" />
+                    </MenuItem>
+                    <MenuItem Header="Delete" Name="miDeleteQuestion" />
+                </Menu>
+            </DockPanel>
+        </Grid>
+    </Expander>
+</UserControl>

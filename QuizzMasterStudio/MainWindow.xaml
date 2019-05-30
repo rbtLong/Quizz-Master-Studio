@@ -1,0 +1,85 @@
+﻿<Window x:Class="QuizzMasterStudio.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:q="clr-namespace:QuizzMasterStudio"
+        xmlns:mdi="clr-namespace:WPF.MDI;assembly=WPF.MDI"
+        Title="QuizzMaster Studio" Height="600" Width="850"
+        Icon="/QuizzMasterStudio;component/Images/icon.png"
+        WindowState="Minimized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MaxWidth="500" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <DockPanel HorizontalAlignment="Stretch" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <Menu>
+                <MenuItem Header="File">
+                    <MenuItem Header="Create Quizz" Name="miCreateQuizz" Click="miCreateQuizz_Click" />
+                    <Separator />
+                    <MenuItem Header="Import Question" Name="miImportQuestion" />
+                    <MenuItem Header="Export Question" Name="miExportQuestion" />
+                    <Separator />
+                    <MenuItem Header="Sign Out" Name="miSignOut" Click="miSignOut_Click" />
+                    <Separator />
+                    <MenuItem Header="Exit" Name="miExit" Click="miExit_Click" />
+                </MenuItem>                               
+                <MenuItem Header="Profile" >
+                    <MenuItem Header="Configure Current Profile" Name="miConfigProfile" />
+                    <MenuItem Header="Manage Profiles" Name="miManageProfile" />
+                </MenuItem>
+                <MenuItem Header="Windows">
+                    <MenuItem Header="Cascade" Name="miCascade" />
+                    <MenuItem Header="Minimize All" Name="miMinimizeAll" />
+                    <MenuItem Header="Unminimize All" Name="miUnminimizeAll" />
+                </MenuItem>
+                <MenuItem Header="Help" >
+                    <MenuItem Header="About..." Name="miAbout" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        
+        <Grid Grid.Row="1" Grid.Column="1" >
+            <Grid.Background>
+                <LinearGradientBrush >
+                    <GradientStop Color="#999999" Offset="0" />
+                    <GradientStop Color="White" Offset=".50" />
+                    <GradientStop Color="#999999" Offset="1" />
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Image Stretch="Uniform"  Width="400" Height="400" Grid.Row="0"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Source="/QuizzMasterStudio;component/Images/bg1.png" />
+                <Label HorizontalAlignment="Center" VerticalAlignment="Center" Opacity=".85"
+                       FontSize="22" FontStretch="Expanded" FontWeight="DemiBold"
+                       Grid.Row="1">
+                    Quizz Master Studio
+                </Label>
+            </Grid>
+            <mdi:MdiContainer Name="mdiContainer" Background="Transparent" Theme="Luna" />
+        </Grid>
+            <Grid Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" MaxHeight="400"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                    <q:QuizzSelector Grid.Row="0" x:Name="ctrlQuizz" MaxHeight="400" MaxWidth="500" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    <q:QuestionSelector Grid.Row="1" x:Name="ctrlQuestion" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MaxWidth="500" />
+                <GridSplitter Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="2"
+                          ShowsPreview="False" Background="#333333" />
+            </Grid>
+        
+        <GridSplitter Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Left" Width="3"
+                      ShowsPreview="False" Background="#333333" />
+    </Grid>
+</Window>

@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="QuizzMasterStudio.Question.AnswerList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300">
+    <Expander Header="Answers" Grid.Column="0" IsExpanded="True" Background="#eeeeee">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                
+                <TextBox Name="tbxAnswer" Grid.Column="0" Margin="2"  />
+                <Button Name="btnAddAnswer" Content="Add" Margin="2" Grid.Column="1" Click="btnAddAnswer_Click" />
+            </Grid>
+            
+            <Menu Grid.Row="1">
+                <MenuItem Header="Edit" Name="miEdit" Click="miEdit_Click" />
+                <MenuItem Header="Delete" Name="miDelete" Click="miDelete_Click" />
+                <MenuItem Header="Pop-out" Name="miPopOut" Click="miPopOut_Click" />
+            </Menu>
+            <ListBox Name="lbxAnswers" Margin="3,3,3,3" MinWidth="100" Grid.Row="2" />
+            <Menu Grid.Row="3">
+                <MenuItem Header="Options...">
+                    <MenuItem Header="Credit Options..."  Name="miCreditOptions"/>
+                    <MenuItem Header="Play Sound..." Name="miPlaySound" />
+                    <CheckBox Content="Force Check Case-Sensitive" Name="cbxForceCaseSensitive" />
+                    <CheckBox Content="Force Ignore Case-Sensitive" Name="cbxForceIgnoreSensitive" />
+                </MenuItem>
+            </Menu>
+            
+        </Grid>
+    </Expander>
+</UserControl>

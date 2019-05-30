@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AE8DB836-34F4-4D03-9A44-15E7C3778BFA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuizzUI</RootNamespace>
+    <AssemblyName>QuizzUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ListBoxQuizzItm.xaml.cs">
+      <DependentUpon>ListBoxQuizzItm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProblemListbox.xaml.cs">
+      <DependentUpon>ProblemListbox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QuizzContainer.xaml.cs">
+      <DependentUpon>QuizzContainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QuizzInfoBalloon.xaml.cs">
+      <DependentUpon>QuizzInfoBalloon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QuizzSettings.xaml.cs">
+      <DependentUpon>QuizzSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Quizz\EffectPhrases.cs" />
+    <Compile Include="Quizz\FreeResponse.xaml.cs">
+      <DependentUpon>FreeResponse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WndGameResult.xaml.cs">
+      <DependentUpon>WndGameResult.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ListBoxQuizzItm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ProblemListbox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QuizzContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QuizzInfoBalloon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QuizzSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Quizz\FreeResponse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WndGameResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GameEngine\GameEngine.csproj">
+      <Project>{1238626D-E21C-4411-9183-0A00AB4F8E1B}</Project>
+      <Name>GameEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameUserStatistics\GameUserStatistics.csproj">
+      <Project>{89B44B78-9278-43D1-83F6-6F7E7D6EE060}</Project>
+      <Name>GameUserStatistics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Quizz\Quizz.csproj">
+      <Project>{120FAE23-C913-4929-8159-1A7D3670DEEA}</Project>
+      <Name>Quizz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScoreSystem\ScoreSystem.csproj">
+      <Project>{DF03E53C-5411-4BB6-B3CE-112849A602F2}</Project>
+      <Name>ScoreSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserProfileUI\UserProfileUI.csproj">
+      <Project>{D6DC5534-BF7A-4242-82E8-4B961385D6D1}</Project>
+      <Name>UserProfileUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserProfile\UserProfile.csproj">
+      <Project>{A00CFAE1-A978-4AC8-B3D4-554A8BEF7126}</Project>
+      <Name>UserProfile</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Study.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\light.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Gears.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\datashow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Spheres_Icons_Shiny_Things.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\checklist.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,25 @@
+﻿<Window x:Class="QuizzMasterStudio.Quizz.WndEditQuizz"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:q="clr-namespace:QuizzMasterStudio.Quizz"
+        Title="WndEditQuizz" Height="350" Width="550"
+        Icon="/QuizzMasterStudio;component/Images/stack1.png">
+    <Grid>       
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <DockPanel Background="#adadad" Grid.Row="0">
+            <Label FontSize="28" Content="Title" FontWeight="ExtraBold" FontStretch="UltraExpanded" 
+                   Foreground="White" FontFamily="Calibri" Margin="10,0,0,0" Name="lblTitle" />
+        </DockPanel>
+        <Grid Name="grdSettings" Grid.Row="1" />
+        <Grid Background="#ededed" Grid.Row="2" >
+            <DockPanel HorizontalAlignment="Right" Margin="3">
+                <Button Content="Okay" Name="btnOk" Margin="10,0,0,0" IsEnabled="True" Click="btnOk_Click" Width="50" Height="25" />
+                <Button Content="Cancel" Name="btnCancel" Margin="10,0,0,0" Click="btnCancel_Click" Width="50" />
+            </DockPanel>
+        </Grid>
+    </Grid>
+</Window>

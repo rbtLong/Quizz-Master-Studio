@@ -1,0 +1,15 @@
+﻿<Window x:Class="QuizzMasterStudio.SplashScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None" WindowState="Normal"
+        WindowStartupLocation="CenterScreen" AllowsTransparency="True"
+        Background="Transparent" BorderBrush="Transparent"
+        Title="SplashScreen" Topmost="True">
+    <Window.Effect>
+        <DropShadowEffect Direction="250" BlurRadius="10" ShadowDepth="10" />
+    </Window.Effect>
+    <Grid>
+        <Image Source="/QuizzMasterStudio;component/Images/splashscreen.png"
+               Height="400" Width="640" MouseDown="Image_MouseDown"/>
+    </Grid>
+</Window>

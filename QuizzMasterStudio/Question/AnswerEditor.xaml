@@ -1,0 +1,107 @@
+﻿<Window x:Class="QuizzMasterStudio.Question.AnswerEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AnswerEditor" Height="366" Width="384"
+        Icon="/Images/pen.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Expander Grid.Row="0" IsExpanded="True" Header="Answer">
+            <Expander.Background>
+                <LinearGradientBrush>
+                    <GradientStop Offset="0" Color="#efefef" />
+                </LinearGradientBrush>
+            </Expander.Background>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <TextBox Name="tbxAnswer" AcceptsReturn="True" TextWrapping="Wrap" VerticalAlignment="Stretch"
+                     MinHeight="50"/>
+
+                <StackPanel Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal" FlowDirection="RightToLeft">
+                    <StackPanel.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Offset="0" Color="#efefef" />
+                            <GradientStop Offset="1" Color="#ededed" />
+                        </LinearGradientBrush>
+                    </StackPanel.Background>
+                    <Button Content="Insert Symbol" HorizontalAlignment="Center" Margin="2,2,2,2" />
+                </StackPanel>
+            </Grid>
+
+        </Expander>
+
+        <Grid Grid.Row="1" MaxHeight="300" MinHeight="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Grid.Column="0" MinWidth="150" FontSize="15" FontWeight="Heavy" Margin="2">
+                <GroupBox.Header>
+                    <CheckBox Content="Override Answer Settings" Name="cbxAnswerSettings" Checked="cbxAnswerSettings_Checked"
+                              Unchecked="cbxAnswerSettings_Unchecked"/>
+                </GroupBox.Header>
+                <Grid Name="grdAnswerSettings" IsEnabled="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="3" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="3" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Grid.Row="0" Grid.Column="1" FontWeight="Normal" FontSize="12" Content="Ignore Mistakes"
+                              Name="cbxIgnoreMistakes"/>
+                    <CheckBox Grid.Row="2" Grid.Column="1" FontWeight="Normal" FontSize="12"
+                              Name="cbxCreditPercentile">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Credit Percentile" Grid.Row="0" Grid.ColumnSpan="2" />
+                            <TextBox Name="tbxCreditPercentile" FontSize="12" Grid.Row="1" Grid.Column="0"
+                                       TextAlignment="Center" Text="100" />
+                            <Label Content="%" Grid.Row="1" Grid.Column="1"/>
+                        </Grid>
+                    </CheckBox>
+                    <CheckBox FontWeight="Normal" FontSize="12" Grid.Row="0" Grid.Column="2" Grid.RowSpan="8"
+                              Name="cbxPlaySong">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Label Content="Play Song. . ." Grid.Row="0" />
+                            <ComboBox Grid.Row="1" Name="cbxAddSong">
+                                <ComboBoxItem Content="Add Song..." />
+                            </ComboBox>
+                        </Grid>
+                    </CheckBox>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <StackPanel Grid.Row="2" FlowDirection="RightToLeft" Orientation="Horizontal" Background="#bbbbbb" >
+            <Button Content="Cancel" Width="40" Height="25" Margin="5,2,2,2" Name="btnOkay" Click="btnOkay_Click" />
+            <Button Content="Okay" Width="40" Margin="5,2,2,2" Name="btnCancel" Click="btnCancel_Click" />
+        </StackPanel>
+        
+        <GridSplitter Height="3" Grid.Row="0" HorizontalAlignment="Stretch" Background="Black" VerticalAlignment="Bottom" />
+        <Border Grid.Row="2" Height="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="Black" />
+    </Grid>
+</Window>

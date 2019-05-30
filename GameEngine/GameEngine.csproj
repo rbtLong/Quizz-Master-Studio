@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1238626D-E21C-4411-9183-0A00AB4F8E1B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GameEngine</RootNamespace>
+    <AssemblyName>GameEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GameQuizzDataTypes\GameAnswer.cs" />
+    <Compile Include="GameQuizzDataTypes\GameProblem.cs" />
+    <Compile Include="GameQuizzDataTypes\GameQuizzSet.cs" />
+    <Compile Include="Core.cs" />
+    <Compile Include="Core.GameControl.cs" />
+    <Compile Include="Core.ScoreSystem.EventHandlers.cs" />
+    <Compile Include="Core.Time.cs" />
+    <Compile Include="enumGameState.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core.Events.cs" />
+    <Compile Include="Core.ScoreSystem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core.GenerateQuestions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LinqXMLTools\LinqXMLTools.csproj">
+      <Project>{6B9D948E-6FF6-4954-AB13-0127F9C7B1F2}</Project>
+      <Name>LinqXMLTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuizzSettings\QuizzSettings.csproj">
+      <Project>{A8362C1D-39E3-4B47-90FE-750ED58503E0}</Project>
+      <Name>QuizzSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Quizz\Quizz.csproj">
+      <Project>{120FAE23-C913-4929-8159-1A7D3670DEEA}</Project>
+      <Name>Quizz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScoreSystem\ScoreSystem.csproj">
+      <Project>{DF03E53C-5411-4BB6-B3CE-112849A602F2}</Project>
+      <Name>ScoreSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

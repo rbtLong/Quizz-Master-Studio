@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="QuizzMasterStudio.Quizz.EditQuizz"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:s="clr-namespace:QuizzMasterStudio.QuizzGame"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="550">
+    <Expander Header="Quizz Settings" IsExpanded="True"
+              Background="#dfdfdf" >
+        <Grid Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="250" />
+            </Grid.ColumnDefinitions>
+            <ScrollViewer>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10" />
+                        <RowDefinition />
+                        <RowDefinition Height="10" />
+                    </Grid.RowDefinitions>
+                    <Grid Margin="3" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="10" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        
+                        <Label Content="Quizz Name:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" />
+                        <TextBox Grid.Column="1" Name="tbxQuizzName" TextChanged="tbxQuizzName_TextChanged"  Grid.Row="0" />
+
+                        <Label Content="Path:" Grid.Column="0" Grid.Row="2"  HorizontalAlignment="Right" />
+                        <TextBox Grid.Column="1" Name="tbxPath" IsEnabled="False" Grid.Row="2" />
+
+                        <Label Content="Created By:" Grid.Column="0" Grid.Row="4"  HorizontalAlignment="Right" />
+                        <TextBox Grid.Column="1" Name="tbxCreatedBy" IsEnabled="False" Grid.Row="4" />
+
+                        <Label Content="Created On:" Grid.Column="0" Grid.Row="6"  HorizontalAlignment="Right" />
+                        <TextBox Grid.Column="1" Name="tbxCreatedOn" IsEnabled="False" Grid.Row="6" />
+
+                        <Label Content="Id Token:" Grid.Column="0" Grid.Row="8"  HorizontalAlignment="Right" />
+                        <TextBox Grid.Column="1" Name="tbxIdToken" IsEnabled="False" Grid.Row="8"
+                         Text="{Binding ElementName=mContainer, Path=IdToken, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+
+                        <Label Content="File Name:" Grid.Column="0" Grid.Row="10"  HorizontalAlignment="Right" />
+                        <TextBox Grid.Column="1" Name="tbxFileName" IsEnabled="True" Grid.Row="10" TextChanged="tbxFileName_TextChanged"/>
+                    </Grid>
+                </Grid>
+            </ScrollViewer>
+            <s:GameSettings Grid.Column="1" x:Name="gmSetting" />
+        </Grid>
+    </Expander>
+</UserControl>

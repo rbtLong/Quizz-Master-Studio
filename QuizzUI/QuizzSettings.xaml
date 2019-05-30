@@ -1,0 +1,23 @@
+﻿<Window x:Class="QuizzUI.QuizzSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prb="clr-namespace:QuizzUI"
+        Title="Quizz Settings" Height="300" Width="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="150" />
+            </Grid.ColumnDefinitions>
+            <prb:ProblemListbox x:Name="plbQuizzList" Grid.Column="0" />
+            <GroupBox Header="Problem Settings" Grid.Column="1" Margin="2">
+                <TextBox TextWrapping="Wrap" AcceptsReturn="False" Name="tbxSettings" />
+            </GroupBox>
+        </Grid>
+    </Grid>
+</Window>
